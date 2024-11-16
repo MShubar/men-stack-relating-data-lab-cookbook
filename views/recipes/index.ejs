@@ -1,0 +1,15 @@
+<%- include('../partials/navbar.ejs') %>
+<h1>Recipes</h1>
+<section class="ingredients-list">
+  <% recipes.forEach((recipe, index) => { %>
+  <a href="/recipes/<%= recipe._id %>">
+    <div class="ingredient-card">
+      <div class="ingredient-image">
+        <img src="/Images/<%= recipe.image %>" alt="Ingredient Image" />
+      </div>
+      <h3><%= recipe.name %></h3>
+      <h3>Owned by <%= recipe.owner.username %></h3>
+    </div>
+  </a>
+  <% }); %>
+</section>

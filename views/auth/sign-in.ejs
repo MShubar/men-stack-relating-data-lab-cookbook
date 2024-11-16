@@ -1,0 +1,12 @@
+<%- include('../partials/authnavbar.ejs') %>
+<form id="authsinging" action="/auth/sign-in" method="post">
+  <h1>Sign-In</h1>
+  <label for="username">Username</label>
+  <input type="text" name="username" id="username" required />
+
+  <label for="password">Password</label>
+  <input type="password" name="password" id="password" required />
+  <button class="button" type="submit">Sign in</button>
+  <h4>Don’t have an account?</h4>
+  <a class="button" href="/auth/sign-up">Sign up</a>
+</form>
