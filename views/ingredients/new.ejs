@@ -1,0 +1,13 @@
+<%- include('../partials/navbar.ejs') %>
+<form
+  id="authsinging"
+  action="/ingredients"
+  method="POST"
+  enctype="multipart/form-data"
+>
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name" />
+  <label for="image">Ingredient image:</label>
+  <input type="file" name="image" id="image" />
+  <button type="submit">Add ingredient</button>
+</form>

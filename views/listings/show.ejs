@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <%- include('../partials/navbar.ejs') %>
+    <h1>listing</h1>
+    <ul>
+      Owner: <%= listing.owner.username %>
+      </br> 
+      Street Address: <%= listing.streetAddress %> 
+      </br>
+      City: <%= listing.city %> 
+      </br>
+      Price: <%= listing.price %>BD Size: <%= listing.size %>SQM
+      </br>
+      
+    </ul>
+
+<h2>Favorites</h2>
+<p>Favorited by <%= listing.favoritedByUsers.length %> people.</p>
+<% if (userHasFavorited) { %>
+<p>You've favorited this listing!</p>
+<form
+  action="/listings/<%= listing._id %>/favorited-by/<%= user._id %>?_method=DELETE"
+  method="POST"
+>
+  <button type="submit">Unfavorite it!</button>
+</form>
+<% } else { %>
+<p>You haven't favorited this listing.</p>
+    <form
+  action="/listings/<%= listing._id %>/favorited-by/<%= user._id %>"
+  method="POST"
+>
+  <button type="submit">Favorite it!</button>
+</form>
+<% } %>
+
+<h2>dislikes</h2>
+<p>Disliked by <%= listing.dislikedByUsers.length %> people.</p>
+<% if (userHasDisliked) { %>
+<p>You've disliked this listing!</p>
+<form
+  action="/listings/<%= listing._id %>/disliked-by/<%= user._id %>?_method=DELETE"
+  method="POST"
+>
+  <button type="submit">remove dislike!</button>
+</form>
+<% } else { %>
+<p>You haven't disliked this listing.</p>
+    <form
+  action="/listings/<%= listing._id %>/disliked-by/<%= user._id %>"
+  method="POST"
+>
+  <button type="submit">dislike it!</button>
+</form>
+<% } %>
+
+    <a href="/listings/<%= listing._id %>/edit">Edit this listing</a>
+    <form action="/listings/<%= listing._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete this listing</button>
+    </form>
+  </body>
+</html>

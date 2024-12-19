@@ -1,0 +1,17 @@
+<%- include('../partials/navbar.ejs') %>
+    <form id="authsinging" action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
+      <label for="name">recipe:</label>
+      <input
+        type="text"
+        name="name"
+        id="street"
+        value="<%= recipe.name %>"
+      />
+      <label for="instructions">instructions:</label>
+      <input type="text" name="instructions" id="instructions" value="<%= recipe.instructions %>" />
+      <label for="image">recipe image:</label>
+  <input type="file" name="image" id="image" />
+      <button type="submit">Edit recipe</button>
+    </form>
+  </body>
+</html>

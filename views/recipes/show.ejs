@@ -1,0 +1,58 @@
+<%- include('../partials/navbar.ejs') %>
+    <h1>Selected Recipe</h1>
+    <ul>
+      Owner: <%= recipe.owner.username %>
+      </br> 
+      Name: <%= recipe.name %> 
+      </br>
+      Instructions: <%= recipe.instructions %> 
+      </br>
+      
+      
+    </ul>
+    <img id="showimage" src="/Images/<%= recipe.image %>" alt="" />
+<h2>Favorites</h2>
+<p>Favorited by <%= recipe.favoritedByUsers.length %> people.</p>
+<% if (userHasFavorited) { %>
+<p>You've favorited this recipe!</p>
+<form
+  action="/recipes/<%= recipe._id %>/favorited-by/<%= user._id %>?_method=DELETE"
+  method="POST"
+>
+  <button type="submit">Unfavorite it!</button>
+</form>
+<% } else { %>
+<p>You haven't favorited this recipe.</p>
+    <form
+  action="/recipes/<%= recipe._id %>/favorited-by/<%= user._id %>"
+  method="POST"
+>
+  <button type="submit">Favorite it!</button>
+</form>
+<% } %>
+
+<h2>dislikes</h2>
+<p>Disliked by <%= recipe.dislikedByUsers.length %> people.</p>
+<% if (userHasDisliked) { %>
+<p>You've disliked this recipe!</p>
+<form
+  action="/recipes/<%= recipe._id %>/disliked-by/<%= user._id %>?_method=DELETE"
+  method="POST"
+>
+  <button type="submit">remove dislike!</button>
+</form>
+<% } else { %>
+<p>You haven't disliked this recipe.</p>
+    <form
+  action="/recipes/<%= recipe._id %>/disliked-by/<%= user._id %>"
+  method="POST"
+>
+  <button type="submit">dislike it!</button>
+</form>
+<% } %>
+
+    <a href="/recipes/<%= recipe._id %>/edit">Edit this recipe</a>
+    <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete this recipe</button>
+    </form>
+ 

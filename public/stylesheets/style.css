@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../Images/image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* auth page */
+#authnavbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbutton {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 10px;
+
+  border-radius: 50px;
+}
+
+#authLogo {
+  background-color: purple;
+  color: white;
+  padding: 20px;
+  border-radius: 50px;
+}
+
+#authsinging {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 500px;
+  background-color: grey;
+  border-radius: 50px;
+}
+
+.button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+h4 {
+  margin: 0;
+}
+
+#showingData {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 160px;
+}
+
+.data {
+  background-color: grey;
+  width: 320px;
+  height: 360px;
+  border-radius: 30px;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.dataPic {
+  margin: 10px;
+  height: 260px;
+  width: 280px;
+}
+
+.ingredients-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px;
+}
+
+.ingredient-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: 200px;
+  text-align: center;
+}
+
+.ingredient-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ingredient-card h3 {
+  color: #333;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+#showimage {
+  width: 280px;
+  height: 280px;
+}
+
+#navcent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
